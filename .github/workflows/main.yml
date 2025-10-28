@@ -69,8 +69,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     # ton token SonarCloud (secret)
         run: >
           mvn -B verify sonar:sonar
-          -Dsonar.projectKey=moieuh
-          -Dsonar.organization=<TON_ORGANIZATION>
+          -Dsonar.projectKey=Moieuh_tp-devops-correction-docker
+          -Dsonar.organization=moieuh
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           --file ./simple-api/pom.xml
