@@ -24,7 +24,7 @@ jobs:
           cache: maven
 
       - name: Build and test with Maven
-        run: mvn -B -ntp clean verify --file pom.xml
+        run: mvn -B -ntp clean verify --file simple-api/pom.xml
         # si ton pom est ailleurs : --file simple-api/pom.xml
 
   # --- JOB 2 : BUILD & (POSSIBLE) PUSH DOCKER IMAGES ---
