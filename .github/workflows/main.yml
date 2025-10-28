@@ -5,8 +5,6 @@ name: CI devops 2025
 on:
   push:
     branches: [ main, develop ]
-  pull_request:
-    branches: [ main, develop ]
 
 jobs:
   # --- JOB 1 : TEST BACKEND (Maven) ---
@@ -21,8 +19,7 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-          cache: maven
-
+          
       - name: Build and test with Maven
         run: mvn -B -ntp clean verify --file simple-api/pom.xml
       # --- JOB 2 : BUILD & (CONDITIONALLY) PUSH ---
