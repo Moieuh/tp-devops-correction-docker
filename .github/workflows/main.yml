@@ -61,17 +61,4 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
-# --- SonarCloud analysis ---
-      # --- SonarCloud analysis ---
-      - name: SonarCloud Scan (Maven)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # pour décorer les PR
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     # ton token SonarCloud (secret)
-        run: >
-          mvn -B verify sonar:sonar
-          -Dsonar.projectKey=Moieuh_tp-devops-correction-docker
-          -Dsonar.organization=moieuh
-          -Dsonar.host.url=https://sonarcloud.io
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-          --file ./simple-api/pom.xml
 
